@@ -21,8 +21,11 @@ else:
     tentativas = 0
 
 #sorteando o número secreto
-    #numero_secreto = round((random.random()*100))
+#--numero_secreto = round((random.random()*100))
 numero_secreto = random.randrange(1, 100)
+
+#pontuação
+pontos = 1000
 
 for rodada in range(1, tentativas+1):
     print(f"\nTentativa: {rodada} de {tentativas}")
@@ -46,8 +49,13 @@ for rodada in range(1, tentativas+1):
         elif maior:
             print("Você errou!! O número secreto é MAIOR que o número que você chutou")
 
+        #pontuação
+        pontos_perdidos = abs(numero_secreto - chute)
+        pontos = pontos - pontos_perdidos
+
     #decremento
     rodada = rodada + 1
 
-print(f"Número escolhido: {numero_secreto}")
+print(f"\nNúmero escolhido: {numero_secreto}")
+print(f"Sua pontuação: {pontos}")
 print("Fim de jogo!")
