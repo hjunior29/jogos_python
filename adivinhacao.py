@@ -1,9 +1,14 @@
+#importando biblioteca
+import random
+
 print("********************************")
 print("BEM VINDO AO JOGO DE ADIVINHAÇÃO")
 print("********************************")
 
-#definindo o número secreto
-numero_secreto = 9
+#sorteando o número secreto
+    #numero_secreto = round((random.random()*100))
+numero_secreto = random.randrange(1, 100)
+    #print(numero_secreto)
 tentativas = 5
 
 for rodada in range(1, tentativas+1):
